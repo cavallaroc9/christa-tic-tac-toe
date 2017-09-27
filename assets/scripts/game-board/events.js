@@ -4,7 +4,7 @@
 
 let turn = 'playerX'
 
-// const hasMarker = function (cell) {
+// DONOTUSEconst hasMarker = function (cell) {
 //   if ($(cell).html().trim()) {
 //     console.log('Not Empty')
 //   } else {
@@ -13,27 +13,40 @@ let turn = 'playerX'
 //     switchPlayer()
 //   }
 // }
-
-// const hasMarker = function (cell) {
-//   if ($(cell).html().trim()) {
-//     markBoard(cell)
-//     switchPlayer()
-//    } else {
-//      console.log('Already Marked!')
-// }
+//
+const hasNoMarker = function (cell) {
+  if ($(cell).html().trim()) {
+    console.log('Already Marked')
+    return false
+  } else {
+    console.log('Empty')
+    return true
+  }
+}
 
 const markBoard = function (cell) {
-  if (turn === 'playerX') {
-    // hasMarker(cell)
+  if (turn === 'playerX' && hasNoMarker(cell) === true) {
     $(cell).text('X')
     switchTurn()
     console.log('player is', turn)
-  } else if (turn === 'playerO') {
+  } else if (turn === 'playerO' && hasNoMarker(cell) === true) {
     $(cell).text('O')
     switchTurn()
-    console.log('player is', turn)
   }
 }
+//   if (turn === 'playerX') {
+//     if (hasNoMarker(cell)) {
+//     $(cell).text('X')
+//     switchTurn()
+//     console.log('player is', turn)
+//   }
+//   } else if (turn === 'playerO') {
+//     if (hasNoMarker(cell) === true) {
+//     $(cell).text('O')
+//     switchTurn()
+//     console.log('player is', turn)
+//   }
+// }
 
 // If turn = playerX
 // then
