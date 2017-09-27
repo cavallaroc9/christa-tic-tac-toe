@@ -20,7 +20,7 @@ $(() => {
   $(document).on('click', function (event) {
     const cell = '#' + event.target.id
     console.log(cell)
-    events.hasMarker(cell)
+    events.markBoard(cell)
     // if ($(cell).html().trim()) {
     //   console.log('Not Empty')
     // } else {

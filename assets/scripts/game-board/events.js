@@ -1,34 +1,62 @@
-const getFormFields = require('../../../lib/get-form-fields')
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
 // const cellsArray = ['', '', '', '', '', '', '', '', '']
-const hasMarker = function (cell) {
-  if ($(cell).html().trim()) {
-    console.log('Not Empty')
-  } else {
-    console.log('Empty')
+
+let turn = 'playerX'
+
+// const hasMarker = function (cell) {
+//   if ($(cell).html().trim()) {
+//     console.log('Not Empty')
+//   } else {
+//     console.log('Empty')
+//     $(cell).text('X')
+//     switchPlayer()
+//   }
+// }
+
+// const hasMarker = function (cell) {
+//   if ($(cell).html().trim()) {
+//     markBoard(cell)
+//     switchPlayer()
+//    } else {
+//      console.log('Already Marked!')
+// }
+
+const markBoard = function (cell) {
+  if (turn === 'playerX') {
+    // hasMarker(cell)
     $(cell).text('X')
+    switchTurn()
+    console.log('player is', turn)
+  } else if (turn === 'playerO') {
+    $(cell).text('O')
+    switchTurn()
+    console.log('player is', turn)
   }
 }
 
-const onSubmitForm = function (event) {
-  event.preventDefault()
-  const data = getFormFields(event.target)
-  console.log(data)
+// If turn = playerX
+// then
+// marker = X
+// mark board with X
+// Change turn to playerO
+//
+const switchTurn = function () {
+  if (turn === 'playerX') {
+    turn = 'playerO'
+    console.log('Player O turn')
+  } else {
+    console.log('Player X turn')
+    turn = 'playerX'
+  }
 }
 
-// const playerX = {
-//   marker: 'x',
-//   turn: false,
-//   startTurn: function () {
-//     this.turn = true
-//   }
+// const onSubmitForm = function (event) {
+//   event.preventDefault()
+//   const data = getFormFields(event.target)
+//   console.log(data)
 // }
-//
-// playerX.startTurn()
-// console.log(playerX.turn)
 
 module.exports = {
-  onSubmitForm,
-  hasMarker
+  markBoard
 }
