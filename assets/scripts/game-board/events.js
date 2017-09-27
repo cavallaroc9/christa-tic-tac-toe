@@ -2,12 +2,12 @@ const getFormFields = require('../../../lib/get-form-fields')
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
 // const cellsArray = ['', '', '', '', '', '', '', '', '']
-const hasMarker = function () {
-  if ($(this).html().trim()) {
-    console.log('Not empty')
+const hasMarker = function (cell) {
+  if ($(cell).html().trim()) {
+    console.log('Not Empty')
   } else {
-    console.log('empty')
-    $(this).text('X')
+    console.log('Empty')
+    $(cell).text('X')
   }
 }
 
@@ -17,16 +17,16 @@ const onSubmitForm = function (event) {
   console.log(data)
 }
 
-const playerX = {
-  marker: 'x',
-  turn: false,
-  startTurn: function () {
-    this.turn = true
-  }
-}
-
-playerX.startTurn()
-console.log(playerX.turn)
+// const playerX = {
+//   marker: 'x',
+//   turn: false,
+//   startTurn: function () {
+//     this.turn = true
+//   }
+// }
+//
+// playerX.startTurn()
+// console.log(playerX.turn)
 
 module.exports = {
   onSubmitForm,

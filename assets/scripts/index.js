@@ -20,12 +20,13 @@ $(() => {
   $(document).on('click', function (event) {
     const cell = '#' + event.target.id
     console.log(cell)
-    if ($(cell).html().trim()) {
-      console.log('Not Empty')
-    } else {
-      console.log('Empty')
-      $(cell).text('X')
-    }
+    events.hasMarker(cell)
+    // if ($(cell).html().trim()) {
+    //   console.log('Not Empty')
+    // } else {
+    //   console.log('Empty')
+    //   $(cell).text('X')
+    // }
   })
 })
 // $(cell).on('click', function () {
