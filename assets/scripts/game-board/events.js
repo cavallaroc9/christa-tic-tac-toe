@@ -6,36 +6,38 @@ const cellsArray = ['', '', '', '', '', '', '', '', '']
 let turn = 'playerX'
 
 const findIndex = function (cell) {
-  if (cell === '#box0') {
-    const index = 0
-    return index
-  } else if (cell === '#box1') {
-    const index = 1
-    return index
-  } else if (cell === '#box2') {
-    const index = 2
-    return index
-  } else if (cell === '#box3') {
-    const index = 3
-    return index
-  } else if (cell === '#box4') {
-    const index = 4
-    return index
-  } else if (cell === '#box5') {
-    const index = 5
-    return index
-  } else if (cell === '#box6') {
-    const index = 6
-    return index
-  } else if (cell === '#box7') {
-    const index = 7
-    return index
-  } else if (cell === '#box8') {
-    const index = 8
-    return index
-  } else if (cell === '#box9') {
-    const index = 9
-    return index
+  let index
+  switch (cell) {
+    case '#box0':
+      index = 0
+      return index
+    case '#box1':
+      index = 1
+      return index
+    case '#box2':
+      index = 2
+      return index
+    case '#box3':
+      index = 3
+      return index
+    case '#box4':
+      index = 4
+      return index
+    case '#box5':
+      index = 5
+      return index
+    case '#box6':
+      index = 6
+      return index
+    case '#box7':
+      index = 7
+      return index
+    case '#box8':
+      index = 8
+      return index
+    case '#box9':
+      index = 9
+      return index
   }
 }
 
