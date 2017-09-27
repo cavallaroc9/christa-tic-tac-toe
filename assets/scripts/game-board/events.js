@@ -1,48 +1,51 @@
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
-
 let turn = 'playerX'
 
 // if array contains winning combo, end game and alert winner
 
-const findIndex = function (cell) {
-  let index
-  switch (cell) {
-    case '#box0':
-      index = 0
-      return index
-    case '#box1':
-      index = 1
-      return index
-    case '#box2':
-      index = 2
-      return index
-    case '#box3':
-      index = 3
-      return index
-    case '#box4':
-      index = 4
-      return index
-    case '#box5':
-      index = 5
-      return index
-    case '#box6':
-      index = 6
-      return index
-    case '#box7':
-      index = 7
-      return index
-    case '#box8':
-      index = 8
-      return index
-    case '#box9':
-      index = 9
-      return index
-  }
-}
+// const findIndex = function (cell) {
+//   let index
+//   switch (cell) {
+//     case '#0':
+//       index = 0
+//       return index
+//     case '#1':
+//       index = 1
+//       return index
+//     case '#2':
+//       index = 2
+//       return index
+//     case '#3':
+//       index = 3
+//       return index
+//     case '#4':
+//       index = 4
+//       return index
+//     case '#5':
+//       index = 5
+//       return index
+//     case '#6':
+//       index = 6
+//       return index
+//     case '#7':
+//       index = 7
+//       return index
+//     case '#b8':
+//       index = 8
+//       return index
+//     case '#9':
+//       index = 9
+//       return index
+//   }
+// }
 
-const hasNoMarker = function (cell) {
-  if ($(cell).html().trim()) {
+// const findWinner = function (cellsArray) {
+//   return cellsArray[0]
+// }
+
+const hasNoMarker = function (event) {
+  if ($(event.target).html().trim()) {
     console.log('Already Marked')
     return false
   } else {
@@ -51,21 +54,21 @@ const hasNoMarker = function (cell) {
   }
 }
 
-const markBoard = function (cell, cellsArray) {
-  if (turn === 'playerX' && hasNoMarker(cell) === true) {
-    $(cell).text('X')
-    const index = findIndex(cell)
-    cellsArray[index] = 'x'
+const markBoard = function (event, cellsArray) {
+  if (turn === 'playerX' && hasNoMarker(event) === true) {
+    $(event.target).text('X')
+    // const index = findIndex(cell)
+    cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
-    console.log('Index is', findIndex(cell))
+    // console.log('Index is', findIndex(cell))
     switchTurn()
     console.log('player is', turn)
-  } else if (turn === 'playerO' && hasNoMarker(cell) === true) {
-    $(cell).text('O')
-    const index = findIndex(cell)
-    cellsArray[index] = 'o'
+  } else if (turn === 'playerO' && hasNoMarker(event) === true) {
+    $(event.target).text('O')
+    // const index = findIndex(cell)
+    cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
-    console.log('Index is', findIndex(cell))
+    // console.log('Index is', findIndex(cell))
     switchTurn()
   }
 }

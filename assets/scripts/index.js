@@ -20,9 +20,8 @@ $(() => {
 
 $(() => {
   $(document).on('click', function (event) {
-    const cell = '#' + event.target.id
-    console.log(cell)
-    events.markBoard(cell, cellsArray)
+    // const cell = '#' + event.target.id
+    events.markBoard(event, cellsArray)
   })
 })
 // $(cell).on('click', function () {
