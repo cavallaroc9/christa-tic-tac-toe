@@ -3,46 +3,25 @@
 let turn = 'playerX'
 
 // if array contains winning combo, end game and alert winner
-
-// const findIndex = function (cell) {
-//   let index
-//   switch (cell) {
-//     case '#0':
-//       index = 0
-//       return index
-//     case '#1':
-//       index = 1
-//       return index
-//     case '#2':
-//       index = 2
-//       return index
-//     case '#3':
-//       index = 3
-//       return index
-//     case '#4':
-//       index = 4
-//       return index
-//     case '#5':
-//       index = 5
-//       return index
-//     case '#6':
-//       index = 6
-//       return index
-//     case '#7':
-//       index = 7
-//       return index
-//     case '#b8':
-//       index = 8
-//       return index
-//     case '#9':
-//       index = 9
-//       return index
-//   }
-// }
-
-// const findWinner = function (cellsArray) {
-//   return cellsArray[0]
-// }
+const findWinner = function (cellsArray) {
+  if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[1] && cellsArray[1] === cellsArray[2]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[3] !== '' && cellsArray[3] === cellsArray[4] && cellsArray[4] === cellsArray[5]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[6] !== '' && cellsArray[6] === cellsArray[7] && cellsArray[7] === cellsArray[8]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[3] && cellsArray[3] === cellsArray[6]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[1] !== '' && cellsArray[1] === cellsArray[4] && cellsArray[4] === cellsArray[7]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[2] !== '' && cellsArray[2] === cellsArray[5] && cellsArray[5] === cellsArray[8]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[4] && cellsArray[4] === cellsArray[8]) {
+    return console.log('winner winner chicken dinner!')
+  } else if (cellsArray[2] !== '' && cellsArray[2] === cellsArray[4] && cellsArray[4] === cellsArray[6]) {
+    return console.log('winner winner chicken dinner!')
+  }
+}
 
 const hasNoMarker = function (event) {
   if ($(event.target).html().trim()) {
@@ -57,18 +36,16 @@ const hasNoMarker = function (event) {
 const markBoard = function (event, cellsArray) {
   if (turn === 'playerX' && hasNoMarker(event) === true) {
     $(event.target).text('X')
-    // const index = findIndex(cell)
     cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
-    // console.log('Index is', findIndex(cell))
+    findWinner(cellsArray)
     switchTurn()
     console.log('player is', turn)
   } else if (turn === 'playerO' && hasNoMarker(event) === true) {
     $(event.target).text('O')
-    // const index = findIndex(cell)
     cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
-    // console.log('Index is', findIndex(cell))
+    findWinner(cellsArray)
     switchTurn()
   }
 }
