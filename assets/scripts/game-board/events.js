@@ -1,19 +1,44 @@
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
-// const cellsArray = ['', '', '', '', '', '', '', '', '']
+
+const cellsArray = ['', '', '', '', '', '', '', '', '']
 
 let turn = 'playerX'
 
-// DONOTUSEconst hasMarker = function (cell) {
-//   if ($(cell).html().trim()) {
-//     console.log('Not Empty')
-//   } else {
-//     console.log('Empty')
-//     $(cell).text('X')
-//     switchPlayer()
-//   }
-// }
-//
+const findIndex = function (cell) {
+  if (cell === '#box0') {
+    const index = 0
+    return index
+  } else if (cell === '#box1') {
+    const index = 1
+    return index
+  } else if (cell === '#box2') {
+    const index = 2
+    return index
+  } else if (cell === '#box3') {
+    const index = 3
+    return index
+  } else if (cell === '#box4') {
+    const index = 4
+    return index
+  } else if (cell === '#box5') {
+    const index = 5
+    return index
+  } else if (cell === '#box6') {
+    const index = 6
+    return index
+  } else if (cell === '#box7') {
+    const index = 7
+    return index
+  } else if (cell === '#box8') {
+    const index = 8
+    return index
+  } else if (cell === '#box9') {
+    const index = 9
+    return index
+  }
+}
+
 const hasNoMarker = function (cell) {
   if ($(cell).html().trim()) {
     console.log('Already Marked')
@@ -27,26 +52,21 @@ const hasNoMarker = function (cell) {
 const markBoard = function (cell) {
   if (turn === 'playerX' && hasNoMarker(cell) === true) {
     $(cell).text('X')
+    const index = findIndex(cell)
+    cellsArray[index] = 'x'
+    console.log(cellsArray)
+    console.log('Index is', findIndex(cell))
     switchTurn()
     console.log('player is', turn)
   } else if (turn === 'playerO' && hasNoMarker(cell) === true) {
     $(cell).text('O')
+    const index = findIndex(cell)
+    cellsArray[index] = 'o'
+    console.log(cellsArray)
+    console.log('Index is', findIndex(cell))
     switchTurn()
   }
 }
-//   if (turn === 'playerX') {
-//     if (hasNoMarker(cell)) {
-//     $(cell).text('X')
-//     switchTurn()
-//     console.log('player is', turn)
-//   }
-//   } else if (turn === 'playerO') {
-//     if (hasNoMarker(cell) === true) {
-//     $(cell).text('O')
-//     switchTurn()
-//     console.log('player is', turn)
-//   }
-// }
 
 // If turn = playerX
 // then
