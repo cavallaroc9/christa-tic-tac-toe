@@ -4,33 +4,67 @@ $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 $background-color: #4e4e4e;
 $font-color: #dfdfdf;
 $white: #fff;
+$box-border-style: solid;
+$box-border-width: 5px;
 
-html {
-  height: 100%;
-}
+
 body {
   background-color: $background-color;
   color: $font-color;
   height: 100%;
 }
 
-.box {
-  border: 3px solid $white;
+div {
+  height: 150px;
 }
 
-table {
-  height: 75%;
-  width: 75%;
-  padding-bottom: 60%;
+
+.box-0 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-right: $box-border-width $box-border-style $white;
 }
 
-td {
-  width: 30%;
-  ::after {
-    padding-bottom: 100%;
-  }
+.box-1 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-left: $box-border-width $box-border-style $white;
+  border-right: $box-border-width $box-border-style $white;
 }
 
-td:after {
+.box-2 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-left: $box-border-width $box-border-style $white;
+}
 
+.box-3 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-right: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
+}
+
+.box-4 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-left: $box-border-width $box-border-style $white;
+  border-right: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
+}
+
+.box-5 {
+  border-bottom: $box-border-width $box-border-style $white;
+  border-left: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
+}
+
+.box-6 {
+  border-right: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
+}
+.box-7 {
+  border-left: $box-border-width $box-border-style $white;
+  border-right: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
+}
+
+.box-8 {
+  border-left: $box-border-width $box-border-style $white;
+  border-top: $box-border-width $box-border-style $white;
 }

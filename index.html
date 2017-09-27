@@ -22,26 +22,38 @@
       cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id
       est laborum.</p>
 
+      <div class ="grid">
+        <div class="row1">
+          <div class="col-xs-4 box-0">0</div>
+          <div class="col-xs-4 box-1">1</div>
+          <div class="col-xs-4 box-2">2</div>
+        </div>
+        <div class="row2">
+          <div class="col-xs-4 box-3">3</div>
+          <div class="col-xs-4 box-4">4</div>
+          <div class="col-xs-4 box-5">5</div>
+        </div>
+        <div class="row3">
+          <div class="col-xs-4 box-6">6</div>
+          <div class="col-xs-4 box-7">7</div>
+          <div class="col-xs-4 box-8">8</div>
+        </div>
+      </div>
 
-
-        <table>
-        <tr class="row1">
-          <td class="box">0</td>
-          <td class="box">1</td>
-          <td class="box">2</td>
-        </tr>
-        <tr class="row2">
-          <td class="box">3</td>
-          <td class="box">4</td>
-          <td class="box">5</td>
-        </tr>
-        <tr class="row3">
-          <td class="box">6</td>
-          <td class="box">7</td>
-          <td class="box">8</td>
-      </tr>
-    </table>
-
-
+      <h2>Inputs</h2>
+    <form class="indexes" id="board-index">
+      <div class="form-board">
+        <input type="text" name="games[cells][0]" id="game-board-0" placeholder="Index 0">
+        <input type="text" name="games[cells][1]" id="game-board-1" placeholder="Index 1">
+        <input type="text" name="games[cells][2]" id="game-board-2" placeholder="Index 2">
+        <input type="text" name="games[cells][3]"id="game-board-3" placeholder="Index 3">
+        <input type="text" name="games[cells][4]" id="game-board-4" placeholder="Index 4">
+        <input type="text" name="games[cells][5]"id="game-board-5" placeholder="Index 5">
+        <input type="text" name="games[cells][6]" id="game-board-6" placeholder="Index 6">
+        <input type="text" name="games[cells][7]" id="game-board-7" placeholder="Index 7">
+        <input type="text" name="games[cells][8]" id="game-board-8" placeholder="Index 8">
+      </div>
+      <button type="submit" class="btn btn-default">Submit game</button>
+    </form>
     </body>
 </html>
