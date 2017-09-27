@@ -15,5 +15,15 @@ $(() => {
 // require('./example')
 
 $(() => {
-  $('#board-index').on('submit', events.onSubmitForm)
+  $('#box0').on('click', function () {
+    if ($(this).html().trim()) {
+      console.log('Not empty')
+    } else {
+      console.log('empty')
+      $(this).text('X')
+    }
+  })
+  $('#box1').on('click', function () {
+    $(this).text('O')
+  })
 })
