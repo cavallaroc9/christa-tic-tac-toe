@@ -1,9 +1,9 @@
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
 
-const cellsArray = ['', '', '', '', '', '', '', '', '']
-
 let turn = 'playerX'
+
+// if array contains winning combo, end game and alert winner
 
 const findIndex = function (cell) {
   let index
@@ -51,7 +51,7 @@ const hasNoMarker = function (cell) {
   }
 }
 
-const markBoard = function (cell) {
+const markBoard = function (cell, cellsArray) {
   if (turn === 'playerX' && hasNoMarker(cell) === true) {
     $(cell).text('X')
     const index = findIndex(cell)
