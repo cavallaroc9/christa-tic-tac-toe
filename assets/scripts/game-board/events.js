@@ -3,6 +3,16 @@
 let turn = 'Player X'
 let over = false
 
+const displayDraw = function () {
+  $('#win-or-draw').text('DRAW!!')
+  over = true
+  return console.log('DRAW')
+}
+
+const isDraw = function (cellsArray) {
+  return cellsArray !== ''
+}
+
 const displayWinner = function () {
   $('#win-or-draw').text(turn + ' WINS!!')
   over = true
@@ -27,6 +37,8 @@ const findWinner = function (cellsArray) {
     displayWinner()
   } else if (cellsArray[2] !== '' && cellsArray[2] === cellsArray[4] && cellsArray[4] === cellsArray[6]) {
     displayWinner()
+  } else if (cellsArray.every(isDraw)) {
+    displayDraw()
   }
 }
 
