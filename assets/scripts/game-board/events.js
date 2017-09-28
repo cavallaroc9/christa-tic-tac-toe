@@ -15,6 +15,12 @@ const onCreateGame = function (event) {
     .catch(ui.createBoardFailure)
 }
 
+const onUpdateGame = function (event) {
+  api.update()
+    .then(ui.updateBoardSuccess)
+    .catch(ui.updateBoardFailure)
+}
+
 const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
   $('#win-or-draw').show()
@@ -74,6 +80,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
     findWinner()
+    onUpdateGame()
     switchTurn()
     console.log('player is', turn)
   } else if (over === false && turn === 'Player O' && hasNoMarker(event) === true) {
@@ -81,6 +88,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
     findWinner()
+    onUpdateGame()
     switchTurn()
   }
 }

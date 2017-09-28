@@ -27,4 +27,3 @@ $(() => {
   $('#reset-button').on('click', boardEvents.resetBoard)
   $('#reset-button').on('click', boardEvents.onCreateGame)
 })
-t

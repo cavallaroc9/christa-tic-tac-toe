@@ -1,13 +1,27 @@
 'use strict'
 
-// const store = require('../store')
+const store = require('../store')
 
 const createBoardSuccess = function (data) {
-  console.log(data)
+  console.log('create board data is', data)
   $('#message').text('gamecreated ')
+  store.game = data.game
+  console.log('game is', store.game)
+  console.log('user is', store.user)
+  // store.user = data.user
 }
 
 const createBoardFailure = function (error) {
+  console.error(error)
+  $('#message').text('Error on create game')
+}
+
+const updateBoardSuccess = function (data) {
+  console.log('update board data is', data)
+  $('#message').text('game updated')
+}
+
+const updateBoardFailure = function (error) {
   console.error(error)
   $('#message').text('Error on create game')
 }
@@ -47,5 +61,7 @@ const createBoardFailure = function (error) {
 
 module.exports = {
   createBoardSuccess,
-  createBoardFailure
+  createBoardFailure,
+  updateBoardSuccess,
+  updateBoardFailure
 }
