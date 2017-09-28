@@ -1,5 +1,6 @@
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
+let cellsArray = ['', '', '', '', '', '', '', '', '']
 let turn = 'Player X'
 let over = false
 
@@ -7,7 +8,7 @@ const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
   over = true
   $('#reset-button').show()
-  return console.log('DRAW')
+  console.log('DRAW')
 }
 
 const isDraw = function (cellsArray) {
@@ -20,9 +21,9 @@ const displayWinner = function () {
   $('#reset-button').show()
   return console.log('winner winner chicken dinner!')
 }
-
-// if array contains winning combo, end game and alert winner
-const findWinner = function (cellsArray) {
+//
+// // if array contains winning combo, end game and alert winner
+const findWinner = function () {
   if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[1] && cellsArray[1] === cellsArray[2]) {
     displayWinner()
   } else if (cellsArray[3] !== '' && cellsArray[3] === cellsArray[4] && cellsArray[4] === cellsArray[5]) {
@@ -54,19 +55,19 @@ const hasNoMarker = function (event) {
   }
 }
 
-const markBoard = function (event, cellsArray) {
+const markBoard = function (event) {
   if (over === false && turn === 'Player X' && hasNoMarker(event) === true) {
     $(event.target).text('X')
     cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
-    findWinner(cellsArray)
+    findWinner()
     switchTurn()
     console.log('player is', turn)
   } else if (over === false && turn === 'Player O' && hasNoMarker(event) === true) {
     $(event.target).text('O')
     cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
-    findWinner(cellsArray)
+    findWinner()
     switchTurn()
   }
 }
@@ -81,10 +82,12 @@ const switchTurn = function () {
   }
 }
 
-const resetBoard = function () {
-  $('.box').text(null)
-  over = false
-}
+// const resetBoard = function (cellsArray) {
+//   $('.box').text(null)
+//   over = false
+//   cellsArray = ['', '', '', '', '', '', '', '', '']
+//   console.log(over, cellsArray)
+// }
 // const onSubmitForm = function (event) {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -92,6 +95,5 @@ const resetBoard = function () {
 // }
 
 module.exports = {
-  markBoard,
-  resetBoard
+  markBoard
 }
