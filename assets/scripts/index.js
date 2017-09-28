@@ -15,5 +15,7 @@ $(() => {
 // require('./example')
 
 $(() => {
-  $('#board-index').on('submit', events.onSubmitForm)
+  $('#reset-button').hide()
+  $(document).on('click', events.markBoard)
+  $('#reset-button').on('click', events.resetBoard)
 })
