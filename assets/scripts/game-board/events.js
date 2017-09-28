@@ -9,7 +9,14 @@ let cellsArray = ['', '', '', '', '', '', '', '', '']
 let turn = 'Player X'
 let over = false
 
+const displayGameStat = function () {
+  api.index()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
+}
+
 const onCreateGame = function (event) {
+  displayGameStat()
   api.create()
     .then(ui.createBoardSuccess)
     .catch(ui.createBoardFailure)
