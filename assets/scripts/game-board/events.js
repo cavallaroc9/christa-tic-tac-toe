@@ -82,12 +82,12 @@ const switchTurn = function () {
   }
 }
 
-// const resetBoard = function (cellsArray) {
-//   $('.box').text(null)
-//   over = false
-//   cellsArray = ['', '', '', '', '', '', '', '', '']
-//   console.log(over, cellsArray)
-// }
+const resetBoard = function () {
+  $('.box').text(null)
+  over = false
+  cellsArray = ['', '', '', '', '', '', '', '', '']
+  console.log(over, cellsArray)
+}
 // const onSubmitForm = function (event) {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -95,5 +95,6 @@ const switchTurn = function () {
 // }
 
 module.exports = {
-  markBoard
+  markBoard,
+  resetBoard
 }

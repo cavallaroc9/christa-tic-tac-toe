@@ -17,7 +17,5 @@ $(() => {
 $(() => {
   $('#reset-button').hide()
   $(document).on('click', events.markBoard)
-  // $('#reset-button').on('click', function () {
-  //   events.resetBoard(cellsArray)
-  // })
+  $('#reset-button').on('click', events.resetBoard)
 })
