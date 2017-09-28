@@ -16,7 +16,17 @@ const onCreateGame = function (event) {
 }
 
 const onUpdateGame = function (event) {
-  api.update()
+  console.log('OnUpdateGame', event.target.id)
+  const game = {
+    'game': {
+      'cell': {
+        'index': event.target.id,
+        'value': cellsArray[event.target.id]
+      },
+      'over': over
+    }
+  }
+  api.update(game)
     .then(ui.updateBoardSuccess)
     .catch(ui.updateBoardFailure)
 }
@@ -38,7 +48,7 @@ const displayWinner = function () {
   $('#win-or-draw').show()
   over = true
   $('#reset-button').show()
-  return console.log('winner winner chicken dinner!')
+  return console.log('winner winner')
 }
 //
 // // if array contains winning combo, end game and alert winner
@@ -80,7 +90,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
     findWinner()
-    onUpdateGame()
+    onUpdateGame(event)
     switchTurn()
     console.log('player is', turn)
   } else if (over === false && turn === 'Player O' && hasNoMarker(event) === true) {
@@ -88,7 +98,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
     findWinner()
-    onUpdateGame()
+    onUpdateGame(event)
     switchTurn()
   }
 }

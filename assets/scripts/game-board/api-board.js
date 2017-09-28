@@ -12,22 +12,14 @@ const create = function () {
     }
   })
 }
-const update = function () {
+const update = function (game) {
   return $.ajax({
     url: config.apiOrigin + '/games/' + store.game.id,
     method: 'PATCH',
     headers: {
       Authorization: 'Token token=' + store.user.token
     },
-    data: {
-      'game': {
-        'cell': {
-          'index': 0,
-          'value': 'x'
-        },
-        'over': false
-      }
-    }
+    data: game
   })
 }
 
