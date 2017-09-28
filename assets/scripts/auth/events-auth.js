@@ -21,6 +21,25 @@ const onSignIn = function (event) {
     .then(ui.signInSuccess)
     .catch(ui.signInFailure)
 }
+
+const onChangePassword = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log(data)
+  api.changePassword(data)
+    .then(ui.changePasswordSuccess)
+    .catch(ui.changePasswordFailure)
+}
+
+const onSignOut = function (event) {
+  const data = getFormFields(this)
+  event.preventDefault()
+  console.log(data)
+  api.signOut()
+    .then(ui.signOutSuccess)
+    .catch(ui.signOutFailure)
+}
+
 // const onSubmitForm = function (event) {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -29,5 +48,7 @@ const onSignIn = function (event) {
 
 module.exports = {
   onSignUp,
-  onSignIn
+  onSignIn,
+  onChangePassword,
+  onSignOut
 }

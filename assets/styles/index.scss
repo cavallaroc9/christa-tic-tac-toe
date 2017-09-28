@@ -18,6 +18,9 @@ div {
   height: 150px;
 }
 
+.alert-message {
+  color: $font-color;
+}
 
 .box-0 {
   border-bottom: $box-border-width $box-border-style $white;
