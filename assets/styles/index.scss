@@ -68,3 +68,12 @@ div {
   border-left: $box-border-width $box-border-style $white;
   border-top: $box-border-width $box-border-style $white;
 }
+
+.result {
+  display: block;
+}
+
+.btn {
+  display: block;
+  text-align: right;
+}

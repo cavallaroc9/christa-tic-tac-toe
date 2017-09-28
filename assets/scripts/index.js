@@ -4,7 +4,7 @@ const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const events = require('./game-board/events')
 
-const cellsArray = ['', '', '', '', '', '', '', '', '']
+let cellsArray = ['', '', '', '', '', '', '', '', '']
 
 $(() => {
   setAPIOrigin(location, config)
@@ -19,9 +19,14 @@ $(() => {
 // $(test).on('click', function ()
 
 $(() => {
+  $('#reset-button').hide()
   $(document).on('click', function (event) {
     // const cell = '#' + event.target.id
     events.markBoard(event, cellsArray)
+  })
+  $('#reset-button').on('click', function () {
+    $('.box').text(null)
+    cellsArray = ['', '', '', '', '', '', '', '', '']
   })
 })
 // $(cell).on('click', function () {

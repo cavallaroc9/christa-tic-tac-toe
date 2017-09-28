@@ -6,6 +6,7 @@ let over = false
 const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
   over = true
+  $('#reset-button').show()
   return console.log('DRAW')
 }
 
@@ -16,6 +17,7 @@ const isDraw = function (cellsArray) {
 const displayWinner = function () {
   $('#win-or-draw').text(turn + ' WINS!!')
   over = true
+  $('#reset-button').show()
   return console.log('winner winner chicken dinner!')
 }
 
@@ -69,12 +71,6 @@ const markBoard = function (event, cellsArray) {
   }
 }
 
-// If turn = playerX
-// then
-// marker = X
-// mark board with X
-// Change turn to playerO
-//
 const switchTurn = function () {
   if (turn === 'Player X') {
     turn = 'Player O'
@@ -85,6 +81,10 @@ const switchTurn = function () {
   }
 }
 
+const resetBoard = function () {
+  $('.box').text(null)
+  over = false
+}
 // const onSubmitForm = function (event) {
 //   event.preventDefault()
 //   const data = getFormFields(event.target)
@@ -92,5 +92,6 @@ const switchTurn = function () {
 // }
 
 module.exports = {
-  markBoard
+  markBoard,
+  resetBoard
 }
