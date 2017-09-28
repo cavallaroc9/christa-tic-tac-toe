@@ -17,6 +17,7 @@ $(() => {
 
 $(() => {
   $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in').on('submit', authEvents.onSignIn)
   $('#reset-button').hide()
   $(document).on('click', events.markBoard)
   $('#reset-button').on('click', events.resetBoard)
