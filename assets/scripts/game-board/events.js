@@ -1,9 +1,19 @@
 'use strict'
-// Using your knowledge of jQuery write a function, onSubmitForm, that console
-// logs the input in the input field when "save changes" is clicked
+
+// const getFormFields = require(`../../../lib/get-form-fields`)
+
+const api = require('./api-board')
+const ui = require('./ui-board')
+
 let cellsArray = ['', '', '', '', '', '', '', '', '']
 let turn = 'Player X'
 let over = false
+
+const onCreateGame = function (event) {
+  api.create()
+    .then(ui.createBoardSuccess)
+    .catch(ui.createBoardFailure)
+}
 
 const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
@@ -101,5 +111,6 @@ const resetBoard = function () {
 
 module.exports = {
   markBoard,
-  resetBoard
+  resetBoard,
+  onCreateGame
 }
