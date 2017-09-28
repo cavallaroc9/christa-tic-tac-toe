@@ -6,6 +6,7 @@ let over = false
 
 const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
+  $('#win-or-draw').show()
   over = true
   $('#reset-button').show()
   console.log('DRAW')
@@ -17,6 +18,7 @@ const isDraw = function (cellsArray) {
 
 const displayWinner = function () {
   $('#win-or-draw').text(turn + ' WINS!!')
+  $('#win-or-draw').show()
   over = true
   $('#reset-button').show()
   return console.log('winner winner chicken dinner!')
@@ -84,6 +86,8 @@ const switchTurn = function () {
 
 const resetBoard = function () {
   $('.box').text(null)
+  $('#reset-button').hide()
+  $('#win-or-draw').hide()
   over = false
   cellsArray = ['', '', '', '', '', '', '', '', '']
   console.log(over, cellsArray)
