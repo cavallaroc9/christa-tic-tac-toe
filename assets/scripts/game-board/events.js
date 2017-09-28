@@ -1,3 +1,4 @@
+'use strict'
 // Using your knowledge of jQuery write a function, onSubmitForm, that console
 // logs the input in the input field when "save changes" is clicked
 let cellsArray = ['', '', '', '', '', '', '', '', '']
