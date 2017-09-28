@@ -1,9 +1,42 @@
 'use strict'
-// Using your knowledge of jQuery write a function, onSubmitForm, that console
-// logs the input in the input field when "save changes" is clicked
+
+// const getFormFields = require(`../../../lib/get-form-fields`)
+
+const api = require('./api-board')
+const ui = require('./ui-board')
+
 let cellsArray = ['', '', '', '', '', '', '', '', '']
 let turn = 'Player X'
 let over = false
+
+const displayGameStat = function () {
+  api.index()
+    .then(ui.getGamesSuccess)
+    .catch(ui.getGamesFailure)
+}
+
+const onCreateGame = function (event) {
+  displayGameStat()
+  api.create()
+    .then(ui.createBoardSuccess)
+    .catch(ui.createBoardFailure)
+}
+
+const onUpdateGame = function (event) {
+  console.log('OnUpdateGame', event.target.id)
+  const game = {
+    'game': {
+      'cell': {
+        'index': event.target.id,
+        'value': cellsArray[event.target.id]
+      },
+      'over': over
+    }
+  }
+  api.update(game)
+    .then(ui.updateBoardSuccess)
+    .catch(ui.updateBoardFailure)
+}
 
 const displayDraw = function () {
   $('#win-or-draw').text('DRAW!!')
@@ -22,7 +55,7 @@ const displayWinner = function () {
   $('#win-or-draw').show()
   over = true
   $('#reset-button').show()
-  return console.log('winner winner chicken dinner!')
+  return console.log('winner winner')
 }
 //
 // // if array contains winning combo, end game and alert winner
@@ -64,6 +97,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'x'
     console.log(cellsArray)
     findWinner()
+    onUpdateGame(event)
     switchTurn()
     console.log('player is', turn)
   } else if (over === false && turn === 'Player O' && hasNoMarker(event) === true) {
@@ -71,6 +105,7 @@ const markBoard = function (event) {
     cellsArray[event.target.id] = 'o'
     console.log(cellsArray)
     findWinner()
+    onUpdateGame(event)
     switchTurn()
   }
 }
@@ -101,5 +136,6 @@ const resetBoard = function () {
 
 module.exports = {
   markBoard,
-  resetBoard
+  resetBoard,
+  onCreateGame
 }

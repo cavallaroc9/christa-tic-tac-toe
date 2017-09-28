@@ -3,7 +3,7 @@
 const setAPIOrigin = require('../../lib/set-api-origin')
 const config = require('./config')
 const authEvents = require('./auth/events-auth')
-const events = require('./game-board/events')
+const boardEvents = require('./game-board/events')
 
 $(() => {
   setAPIOrigin(location, config)
@@ -20,7 +20,11 @@ $(() => {
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
+  // $('#sign-in').on('submit', boardEvents.onCreateGame)
+  $('#create-button').on('click', boardEvents.onCreateGame)
   $('#reset-button').hide()
-  $(document).on('click', events.markBoard)
-  $('#reset-button').on('click', events.resetBoard)
+  // $(document).on('click', boardEvents.markBoard)
+  $('#game-board').on('click', boardEvents.markBoard)
+  $('#reset-button').on('click', boardEvents.resetBoard)
+  $('#reset-button').on('click', boardEvents.onCreateGame)
 })
