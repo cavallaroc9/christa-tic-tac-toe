@@ -19,6 +19,7 @@ const signInSuccess = function (data) {
   $('#change-password').show()
   $('#sign-out').show()
   $('#create-button').show()
+  $('#game-stat').show()
   $('#message').text('Signed in successfully!')
   store.user = data.user
   boardEvents.displayGameStat()
