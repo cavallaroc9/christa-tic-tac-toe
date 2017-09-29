@@ -21,6 +21,7 @@ const signInSuccess = function (data) {
   $('#create-button').show()
   $('#message').text('Signed in successfully!')
   store.user = data.user
+  boardEvents.displayGameStat()
 }
 
 const signInFailure = function (error) {
