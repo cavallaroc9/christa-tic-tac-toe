@@ -8,7 +8,7 @@ const createBoardSuccess = function (data) {
   $('#game-board').show()
   $('#message').text('gamecreated ')
   store.game = data.game
-  console.log('game is', store.game)
+  console.log('game created is', store.game)
   console.log('user is', store.user)
   // store.user = data.user
 }

@@ -16,7 +16,7 @@ $(() => {
 // require('./example')
 
 $(() => {
-  $('#sign-up').hide()
+  // $('#sign-up').hide()
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#create-button').hide()
