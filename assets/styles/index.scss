@@ -10,7 +10,6 @@ $box-border-width: 5px;
 
 body {
   background-color: $background-color;
-  color: $markers-font-color;
   height: 100%;
 }
 
@@ -77,12 +76,13 @@ body {
   display: block;
 }
 
-.btn {
-  display: block;
-  text-align: right;
-}
+// .btn {
+//   display: block;
+//   text-align: right;
+// }
 
 .box {
+  color: $markers-font-color;
   cursor: pointer;
   font-size: 125px;
   height: 150px;
