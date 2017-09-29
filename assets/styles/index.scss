@@ -1,8 +1,8 @@
 $icon-font-path: '~bootstrap-sass/assets/fonts/bootstrap/';
 @import '~bootstrap-sass/assets/stylesheets/bootstrap';
 
-$background-color: #4e4e4e;
-$font-color: #dfdfdf;
+$background-color: #0086b3;
+$markers-font-color: #00e600;
 $white: #fff;
 $box-border-style: solid;
 $box-border-width: 5px;
@@ -10,7 +10,7 @@ $box-border-width: 5px;
 
 body {
   background-color: $background-color;
-  color: $font-color;
+  color: $markers-font-color;
   height: 100%;
 }
 
@@ -19,7 +19,7 @@ body {
 // }
 
 .alert-message {
-  color: $font-color;
+  color: $white;
 }
 
 .box-0 {
@@ -83,7 +83,8 @@ body {
 }
 
 .box {
-  font-size: 100px;
+  cursor: pointer;
+  font-size: 125px;
   height: 150px;
   text-align: center;
 }
