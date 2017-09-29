@@ -4,6 +4,8 @@ const store = require('../store')
 
 const createBoardSuccess = function (data) {
   console.log('create board data is', data)
+  $('#create-button').hide()
+  $('#game-board').show()
   $('#message').text('gamecreated ')
   store.game = data.game
   console.log('game is', store.game)

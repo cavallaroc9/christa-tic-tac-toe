@@ -14,9 +14,9 @@ body {
   height: 100%;
 }
 
-div {
-  height: 150px;
-}
+// div {
+//   height: 150px;
+// }
 
 .alert-message {
   color: $font-color;
@@ -84,5 +84,6 @@ div {
 
 .box {
   font-size: 100px;
+  height: 150px;
   text-align: center;
 }
