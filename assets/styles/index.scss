@@ -6,6 +6,7 @@ $markers-font-color: #00e600;
 $white: #fff;
 $box-border-style: solid;
 $box-border-width: 5px;
+//$home-border-width: 1px;
 
 
 body {
@@ -13,9 +14,36 @@ body {
   height: 100%;
 }
 
+h1 {
+  color: $white;
+  text-align: center;
+}
+
+
 // div {
 //   height: 150px;
 // }
+
+.alert-message {
+  font-size: 15px;
+}
+
+.sign-in-module {
+  //border: $box-border-width $box-border-style $white;
+  background-color: #007399;
+  border: 2px solid #004d66;
+  float: none;
+  margin: 100px auto;
+  padding: 20px;
+}
+
+.sign-in-header {
+  color: $white;
+}
+
+fieldset {
+  text-align: center;
+}
 
 .alert-message {
   color: $white;
@@ -75,11 +103,6 @@ body {
 .result {
   display: block;
 }
-
-// .btn {
-//   display: block;
-//   text-align: right;
-// }
 
 .box {
   color: $markers-font-color;
