@@ -16,13 +16,23 @@ $(() => {
 // require('./example')
 
 $(() => {
-  $('#sign-up').hide()
+  $('#sign-up-link').on('click', function () {
+    $('#sign-in-div').hide()
+    $('#sign-up-div').show()
+  //  $('#sign-up').show()
+  })
+  $('#sign-up-div').hide()
+  $('#sign-up').on('submit', authEvents.onSignUp)
+  $('#sign-in-link').on('click', function () {
+    $('#sign-up-div').hide()
+    $('#sign-in-div').show()
+  //  $('#sign-up').show()
+  })
   $('#change-password').hide()
   $('#sign-out').hide()
   $('#create-button').hide()
   $('#game-board').hide()
   $('#game-stat-button').hide()
-  $('#sign-up').on('submit', authEvents.onSignUp)
   $('#sign-in').on('submit', authEvents.onSignIn)
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)

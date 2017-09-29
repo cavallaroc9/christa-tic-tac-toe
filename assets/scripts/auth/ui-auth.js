@@ -5,6 +5,8 @@ const boardEvents = require('../game-board/events')
 
 const signUpSuccess = function (data) {
   console.log(data)
+  $('#sign-up-div').hide()
+  $('#sign-in-div').show()
   $('#message').text('Signed up successfully!')
 }
 

@@ -19,10 +19,14 @@ h1 {
   text-align: center;
 }
 
+a  {
+  color: $white;
+  text-decoration: underline;
 
-// div {
-//   height: 150px;
-// }
+  :hover {
+    color: blue;
+  }
+}
 
 .alert-message {
   font-size: 15px;
