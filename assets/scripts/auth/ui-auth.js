@@ -15,7 +15,7 @@ const signUpFailure = function (error) {
 
 const signInSuccess = function (data) {
   console.log(data)
-  $('#sign-in').hide()
+  $('#sign-in-div').hide()
   $('#change-password').show()
   $('#sign-out').show()
   $('#create-button').show()
@@ -47,7 +47,7 @@ const signOutSuccess = function () {
   $('#create-button').hide()
   $('#game-stat-button').hide()
   $('#game-board').hide()
-  $('#sign-in').show()
+  $('#sign-in-div').show()
   boardEvents.resetBoard()
   $('#message').text('Signed Out successfully!')
   store.user = null
