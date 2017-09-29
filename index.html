@@ -14,15 +14,23 @@
     <body class="container-fluid">
       <div id="message" class="alert-message"></div>
       <h1>Tic Tac Toe!</h1>
+
+    <div id="sign-up-div" class="col-xs-10 col-md-6 sign-in-module">
       <form id="sign-up">
         <fieldset>
-          <legend>Sign Up</legend>
-          <input type="text" name="credentials[email]" placeholder="Enter Email">
-          <input type="text" name="credentials[password]" placeholder="Enter Password">
-          <input type="text" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
-          <input type="submit" name="submit" value="Sign up!" class="btn btn-primary">
+          <legend class="sign-in-header">Sign Up</legend>
+          <input class="form-control form-control-lg" type="text" name="credentials[email]" placeholder="Enter Email">
+          <br>
+          <input class="form-control form-control-lg" type="text" name="credentials[password]" placeholder="Enter Password">
+          <br>
+          <input class="form-control form-control-lg" type="text" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
+          <br>
+          <input type="submit" name="submit" value="Register" class="btn btn-primary">
+          <br>
+          <a href="#SignIn" id="sign-in-link">Already have an account?</a>
         </fieldset>
       </form>
+    </div>
 
     <div id="sign-in-div" class="col-xs-10 col-md-6 sign-in-module">
       <form id="sign-in">
@@ -33,7 +41,8 @@
           <input class="form-control form-control-lg" type="text" name="credentials[password]" placeholder="Enter Password">
           <br>
           <input type="submit" name="submit" value="Sign In" class="btn btn-primary">
-          <input type="button" name="submit" value="Register" class="btn btn-secondary">
+          <br>
+          <a href="#SignUp" id="sign-up-link">Create an account</a>
         </fieldset>
       </form>
     </div>
