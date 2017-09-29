@@ -16,7 +16,6 @@ const displayGameStat = function () {
 }
 
 const onCreateGame = function (event) {
-  displayGameStat()
   api.create()
     .then(ui.createBoardSuccess)
     .catch(ui.createBoardFailure)
@@ -44,6 +43,7 @@ const displayDraw = function () {
   over = true
   $('#reset-button').show()
   console.log('DRAW')
+  displayGameStat()
 }
 
 const isDraw = function (cellsArray) {
@@ -55,7 +55,8 @@ const displayWinner = function () {
   $('#win-or-draw').show()
   over = true
   $('#reset-button').show()
-  return console.log('winner winner')
+  console.log('winner winner')
+  displayGameStat()
 }
 //
 // // if array contains winning combo, end game and alert winner
@@ -137,5 +138,6 @@ const resetBoard = function () {
 module.exports = {
   markBoard,
   resetBoard,
-  onCreateGame
+  onCreateGame,
+  displayGameStat
 }
