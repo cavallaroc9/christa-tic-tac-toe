@@ -29,10 +29,10 @@ const updateBoardFailure = function (error) {
 }
 
 const getGamesSuccess = function (data) {
-  console.log('games data is', data)
+  console.log('GET games data is', data)
   store.games = data.games
-  console.log('games over =', store.games)
-  $('game-stat').show()
+  console.log('games that are over =', store.games)
+  $('#game-stat').show()
   $('#game-stat').text('Games Played: ' + store.games.length)
 }
 

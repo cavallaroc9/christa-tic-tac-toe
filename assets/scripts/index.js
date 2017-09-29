@@ -26,6 +26,7 @@ $(() => {
   $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#create-button').on('click', boardEvents.onCreateGame)
+  // $('#game-stat-button').on('click', boardEvents.displayGameStat)
   $('#reset-button').hide()
   // $(document).on('click', boardEvents.markBoard)
   $('#game-board').on('click', boardEvents.markBoard)
