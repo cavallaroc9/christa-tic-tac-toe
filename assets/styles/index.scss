@@ -16,6 +16,7 @@ body {
 
 h1 {
   color: $white;
+  margin-top: 20px;
   text-align: center;
 }
 
@@ -28,7 +29,12 @@ a  {
   }
 }
 
+.ml-1 {
+  margin-left: 10px;
+}
+
 .alert-message {
+  display: inline;
   font-size: 15px;
 }
 

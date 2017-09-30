@@ -16,31 +16,50 @@ $(() => {
 // require('./example')
 
 $(() => {
+  // Sign In
+  $('#sign-in-link').on('click', function () {
+    $('#sign-up-div').hide()
+    $('#sign-in-div').show()
+  })
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  // Sign Up
+  $('#sign-up-div').hide()
   $('#sign-up-link').on('click', function () {
     $('#sign-in-div').hide()
     $('#sign-up-div').show()
   //  $('#sign-up').show()
   })
-  $('#sign-up-div').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in-link').on('click', function () {
-    $('#sign-up-div').hide()
-    $('#sign-in-div').show()
-  //  $('#sign-up').show()
+  // Change Password
+  $('#change-password-div').hide()
+  $('#change-password-button').hide()
+  $('#change-password-button').on('click', function () {
+    $('#change-password-button').hide()
+    $('#create-button').hide()
+    $('#game-stat-button').hide()
+    $('#change-password-div').show()
   })
-  $('#change-password').hide()
-  $('#sign-out').hide()
-  $('#create-button').hide()
-  $('#game-board').hide()
-  $('#game-stat-button').hide()
-  $('#sign-in').on('submit', authEvents.onSignIn)
+  $('#cancel-password').on('click', function () {
+    $('#change-password-div').hide()
+    $('#change-password-button').show()
+    $('#game-stat-button').show()
+    $('#create-button').show()
+  })
   $('#change-password').on('submit', authEvents.onChangePassword)
-  $('#sign-out').on('submit', authEvents.onSignOut)
-  $('#create-button').on('click', boardEvents.onCreateGame)
+  // Sign Out
+  // $('#sign-out').hide()
+  // $('#sign-out').on('submit', authEvents.onSignOut)
+  $('#sign-out-button').hide()
+  $('#sign-out-button').on('click', authEvents.onSignOut)
+  // Game Stat
+  $('#game-stat-button').hide()
   $('#game-stat-button').on('click', boardEvents.displayGameStat)
-  $('#reset-button').hide()
-  // $(document).on('click', boardEvents.markBoard)
+  // Game Board
+  $('#game-board').hide()
+  $('#create-button').on('click', boardEvents.onCreateGame)
   $('#game-board').on('click', boardEvents.markBoard)
+  $('#create-button').hide()
   $('#reset-button').on('click', boardEvents.resetBoard)
   $('#reset-button').on('click', boardEvents.onCreateGame)
+  $('#reset-button').hide()
 })
