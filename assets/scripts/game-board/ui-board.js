@@ -3,12 +3,12 @@
 const store = require('../store')
 
 const createBoardSuccess = function (data) {
-  console.log('create board data is', data)
   store.game = data.game
+  console.log('create board data is', data)
   $('#create-button').hide()
   $('#game-board').show()
-  console.log('game created is', store.game)
-  console.log('user is', store.user)
+  console.log('store game is', store.game)
+  console.log('store user is', store.user)
 }
 
 const createBoardFailure = function (error) {
@@ -17,7 +17,9 @@ const createBoardFailure = function (error) {
 }
 
 const updateBoardSuccess = function (data) {
+  store.game = data.game
   console.log('update board data is', data)
+  console.log('store game data is', store.game)
 }
 
 const updateBoardFailure = function (error) {
@@ -26,9 +28,9 @@ const updateBoardFailure = function (error) {
 }
 
 const getGamesSuccess = function (data) {
-  console.log('games data is', data)
   store.games = data.games
-  console.log('games over =', store.games)
+  console.log('games data is', data)
+  console.log('store games = over is', store.games)
   $('#game-stat').text('You have played ' + store.games.length + ' game(s)!')
 }
 
