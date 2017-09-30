@@ -32,7 +32,7 @@ const getGamesSuccess = function (data) {
   console.log('games data is', data)
   store.games = data.games
   console.log('games over =', store.games)
-  $('#game-stat').text('You have played ' + store.games.length + ' games!')
+  $('#game-stat').text('You have played ' + store.games.length + ' game(s)!')
 }
 
 const getGamesFailure = function (error) {

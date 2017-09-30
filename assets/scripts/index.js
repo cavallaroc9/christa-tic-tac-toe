@@ -16,25 +16,39 @@ $(() => {
 // require('./example')
 
 $(() => {
+  // Sign In
+  $('#sign-in-link').on('click', function () {
+    $('#sign-up-div').hide()
+    $('#sign-in-div').show()
+  })
+  $('#sign-in').on('submit', authEvents.onSignIn)
+  // Sign Up
+  $('#sign-up-div').hide()
   $('#sign-up-link').on('click', function () {
     $('#sign-in-div').hide()
     $('#sign-up-div').show()
   //  $('#sign-up').show()
   })
-  $('#sign-up-div').hide()
   $('#sign-up').on('submit', authEvents.onSignUp)
-  $('#sign-in-link').on('click', function () {
-    $('#sign-up-div').hide()
-    $('#sign-in-div').show()
-  //  $('#sign-up').show()
+  // Change Password
+  $('#change-password-div').hide()
+  $('#change-password-button').hide()
+  $('#change-password-button').on('click', function () {
+    $('#change-password-button').hide()
+    $('#create-button').hide()
+    $('#change-password-div').show()
   })
-  $('#change-password').hide()
+  $('#cancel-password').on('click', function () {
+    $('#change-password-div').hide()
+    $('#change-password-button').show()
+    $('#create-button').show()
+  })
+  $('#change-password').on('submit', authEvents.onChangePassword)
+  // Sign Out
   $('#sign-out').hide()
   $('#create-button').hide()
   $('#game-board').hide()
   $('#game-stat-button').hide()
-  $('#sign-in').on('submit', authEvents.onSignIn)
-  $('#change-password').on('submit', authEvents.onChangePassword)
   $('#sign-out').on('submit', authEvents.onSignOut)
   $('#create-button').on('click', boardEvents.onCreateGame)
   $('#game-stat-button').on('click', boardEvents.displayGameStat)

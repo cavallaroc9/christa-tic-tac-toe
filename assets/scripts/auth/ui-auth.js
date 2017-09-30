@@ -18,7 +18,7 @@ const signUpFailure = function (error) {
 const signInSuccess = function (data) {
   console.log(data)
   $('#sign-in-div').hide()
-  $('#change-password').show()
+  $('#change-password-button').show()
   $('#sign-out').show()
   $('#create-button').show()
   $('#game-stat-button').show()
@@ -34,6 +34,9 @@ const signInFailure = function (error) {
 
 const changePasswordSuccess = function () {
   console.log('Changed Password successfully!')
+  $('#change-password-div').hide()
+  $('#change-password-button').show()
+  $('#create-button').show()
   $('#message').text('Changed Password successfully!')
 }
 
