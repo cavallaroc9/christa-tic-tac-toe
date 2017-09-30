@@ -36,7 +36,6 @@ const changePasswordSuccess = function () {
   console.log('Changed Password successfully!')
   $('#change-password-div').hide()
   $('#change-password-button').show()
-  $('#create-button').show()
   $('#game-stat-button').show()
   $('#message').text('Changed Password successfully!')
 }

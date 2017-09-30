@@ -35,7 +35,6 @@ $(() => {
   $('#change-password-button').hide()
   $('#change-password-button').on('click', function () {
     $('#change-password-button').hide()
-    $('#create-button').hide()
     $('#game-stat-button').hide()
     $('#change-password-div').show()
   })
@@ -43,7 +42,6 @@ $(() => {
     $('#change-password-div').hide()
     $('#change-password-button').show()
     $('#game-stat-button').show()
-    $('#create-button').show()
   })
   $('#change-password').on('submit', authEvents.onChangePassword)
   // Sign Out
