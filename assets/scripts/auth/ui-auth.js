@@ -7,29 +7,29 @@ const signUpSuccess = function (data) {
   console.log(data)
   $('#sign-up-div').hide()
   $('#sign-in-div').show()
-  $('#message').text('Signed up successfully!')
+  $('#message').text('You have successfully created an account!!')
 }
 
 const signUpFailure = function (error) {
   console.error(error)
-  $('#message').text('Error on sign up')
+  $('#message').text('Oops! Something went wrong creating your account. Please try again.')
 }
 
 const signInSuccess = function (data) {
   console.log(data)
+  store.user = data.user
   $('#sign-in-div').hide()
   $('#change-password-button').show()
   $('#sign-out-button').show()
   $('#create-button').show()
   $('#game-stat-button').show()
-  $('#message').text('Signed in successfully!')
-  store.user = data.user
-  boardEvents.displayGameStat()
+  $('#message').text('Signed in as ' + store.user.email)
+  // boardEvents.displayGameStat()
 }
 
 const signInFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on sign in')
+  $('#message').text('Oops! Something went wrong. Please try signing in again.')
 }
 
 const changePasswordSuccess = function () {
@@ -37,16 +37,18 @@ const changePasswordSuccess = function () {
   $('#change-password-div').hide()
   $('#change-password-button').show()
   $('#game-stat-button').show()
-  $('#message').text('Changed Password successfully!')
+  $('#message').text('You have successfully changed your password for account ' + store.user.email)
 }
 
 const changePasswordFailure = function (error) {
   console.log(error)
-  $('#message').text('Error Change Password')
+  $('#message').text('Oops! Something went wrong. Please try changing your password again.')
 }
 
 const signOutSuccess = function () {
   console.log('Signed Out successfully!')
+  store.user = null
+  boardEvents.resetBoard()
   $('#change-password-button').hide()
   $('#change-password-div').hide()
   $('#sign-out-button').hide()
@@ -54,15 +56,13 @@ const signOutSuccess = function () {
   $('#game-stat-button').hide()
   $('#game-board').hide()
   $('#sign-in-div').show()
-  boardEvents.resetBoard()
-  $('#message').text('Signed Out successfully!')
-  store.user = null
+  $('#message').text('You have signed out successfully!')
   console.log(store.user)
 }
 
 const signOutFailure = function (error) {
   console.log(error)
-  $('#message').text('Error on sign out')
+  $('#message').text('Oops! Something went wrong. Please try signing out again.')
 }
 
 module.exports = {
