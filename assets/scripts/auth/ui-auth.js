@@ -19,7 +19,7 @@ const signInSuccess = function (data) {
   console.log(data)
   $('#sign-in-div').hide()
   $('#change-password-button').show()
-  $('#sign-out').show()
+  $('#sign-out-button').show()
   $('#create-button').show()
   $('#game-stat-button').show()
   $('#message').text('Signed in successfully!')
@@ -37,6 +37,7 @@ const changePasswordSuccess = function () {
   $('#change-password-div').hide()
   $('#change-password-button').show()
   $('#create-button').show()
+  $('#game-stat-button').show()
   $('#message').text('Changed Password successfully!')
 }
 
@@ -47,8 +48,9 @@ const changePasswordFailure = function (error) {
 
 const signOutSuccess = function () {
   console.log('Signed Out successfully!')
-  $('#change-password').hide()
-  $('#sign-out').hide()
+  $('#change-password-button').hide()
+  $('#change-password-div').hide()
+  $('#sign-out-button').hide()
   $('#create-button').hide()
   $('#game-stat-button').hide()
   $('#game-board').hide()
