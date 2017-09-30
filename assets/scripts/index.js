@@ -45,8 +45,6 @@ $(() => {
   })
   $('#change-password').on('submit', authEvents.onChangePassword)
   // Sign Out
-  // $('#sign-out').hide()
-  // $('#sign-out').on('submit', authEvents.onSignOut)
   $('#sign-out-button').hide()
   $('#sign-out-button').on('click', authEvents.onSignOut)
   // Game Stat
@@ -55,7 +53,7 @@ $(() => {
   // Game Board
   $('#game-board').hide()
   $('#create-button').on('click', boardEvents.onCreateGame)
-  $('#game-board').on('click', boardEvents.markBoard)
+  $('#game-board').on('click', boardEvents.onUpdateGame)
   $('#create-button').hide()
   $('#reset-button').on('click', boardEvents.resetBoard)
   $('#reset-button').on('click', boardEvents.onCreateGame)

@@ -1,11 +1,10 @@
 'use strict'
 
-// const getFormFields = require(`../../../lib/get-form-fields`)
-
 const api = require('./api-board')
 const ui = require('./ui-board')
 
 let cellsArray = ['', '', '', '', '', '', '', '', '']
+let marker
 let turn = 'Player X'
 let over = false
 
@@ -21,66 +20,78 @@ const onCreateGame = function (event) {
     .catch(ui.createBoardFailure)
 }
 
-const onUpdateGame = function (event) {
-  console.log('OnUpdateGame', event.target.id)
+const displayDraw = function (event) {
+  $('#win-or-draw').show()
+  $('#win-or-draw').text('DRAW!!')
+  $('#reset-button').show()
+  console.log('DRAW')
+}
+
+const updateDraw = function (event) {
+  over = true
   const game = {
     'game': {
       'cell': {
         'index': event.target.id,
-        'value': cellsArray[event.target.id]
+        'value': marker
       },
       'over': over
     }
   }
   api.update(game)
+    .then(displayDraw())
     .then(ui.updateBoardSuccess)
     .catch(ui.updateBoardFailure)
-}
-
-const displayDraw = function (event) {
-  over = true
-  $('#win-or-draw').text('DRAW!!')
-  $('#win-or-draw').show()
-  $('#reset-button').show()
-  console.log('DRAW')
-  onUpdateGame(event)
 }
 
 const isDraw = function (cellsArray) {
   return cellsArray !== ''
 }
 
-const displayWinner = function (event) {
-  over = true
-  $('#win-or-draw').text(turn + ' WINS!!')
+const displayWinner = function () {
   $('#win-or-draw').show()
+  $('#win-or-draw').text(turn + ' WINS!!')
   $('#reset-button').show()
   console.log('winner winner')
-  onUpdateGame(event)
+}
+
+const updateWinner = function (event) {
+  over = true
+  const game = {
+    'game': {
+      'cell': {
+        'index': event.target.id,
+        'value': marker
+      },
+      'over': over
+    }
+  }
+  api.update(game)
+    .then(displayWinner())
+    .then(ui.updateBoardSuccess)
+    .catch(ui.updateBoardFailure)
 }
 //
-// // if array contains winning combo, end game and alert winner
+// // if array contains winning combo or draw, end game and alert winner
 const findWinner = function (event) {
   if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[1] && cellsArray[1] === cellsArray[2]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[3] !== '' && cellsArray[3] === cellsArray[4] && cellsArray[4] === cellsArray[5]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[6] !== '' && cellsArray[6] === cellsArray[7] && cellsArray[7] === cellsArray[8]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[3] && cellsArray[3] === cellsArray[6]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[1] !== '' && cellsArray[1] === cellsArray[4] && cellsArray[4] === cellsArray[7]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[2] !== '' && cellsArray[2] === cellsArray[5] && cellsArray[5] === cellsArray[8]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[4] && cellsArray[4] === cellsArray[8]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray[2] !== '' && cellsArray[2] === cellsArray[4] && cellsArray[4] === cellsArray[6]) {
-    displayWinner(event)
+    updateWinner(event)
   } else if (cellsArray.every(isDraw)) {
-    displayDraw(event)
-  } else {
-    onUpdateGame(event)
+    updateDraw(event)
   }
 }
 
@@ -93,24 +104,6 @@ const hasNoMarker = function (event) {
     return true
   }
 }
-
-const markBoard = function (event) {
-  if (over === false && turn === 'Player X' && hasNoMarker(event) === true) {
-    $(event.target).text('X')
-    cellsArray[event.target.id] = 'x'
-    console.log(cellsArray)
-    findWinner(event)
-    switchTurn()
-    console.log('player is', turn)
-  } else if (over === false && turn === 'Player O' && hasNoMarker(event) === true) {
-    $(event.target).text('O')
-    cellsArray[event.target.id] = 'o'
-    console.log(cellsArray)
-    findWinner(event)
-    switchTurn()
-  }
-}
-
 const switchTurn = function () {
   if (turn === 'Player X') {
     turn = 'Player O'
@@ -118,6 +111,39 @@ const switchTurn = function () {
   } else {
     console.log('Player X turn')
     turn = 'Player X'
+  }
+}
+
+const markBoard = function (event) {
+  $(event.target).text(marker)
+  cellsArray[event.target.id] = marker
+  console.log('cellsArray is', cellsArray)
+  findWinner(event)
+  switchTurn()
+  console.log('player is', turn)
+}
+
+const onUpdateGame = function (event) {
+  if (over === false && hasNoMarker(event) === true) {
+    if (turn === 'Player X') {
+      marker = 'x'
+    } else if (turn === 'Player O') {
+      marker = 'o'
+    }
+    console.log('index is', event.target.id)
+    const game = {
+      'game': {
+        'cell': {
+          'index': event.target.id,
+          'value': marker
+        },
+        'over': over
+      }
+    }
+    api.update(game)
+      .then(markBoard(event))
+      .then(ui.updateBoardSuccess)
+      .catch(ui.updateBoardFailure)
   }
 }
 
@@ -130,15 +156,11 @@ const resetBoard = function () {
   cellsArray = ['', '', '', '', '', '', '', '', '']
   console.log(over, cellsArray)
 }
-// const onSubmitForm = function (event) {
-//   event.preventDefault()
-//   const data = getFormFields(event.target)
-//   console.log(data)
-// }
 
 module.exports = {
   markBoard,
   resetBoard,
   onCreateGame,
-  displayGameStat
+  displayGameStat,
+  onUpdateGame
 }
