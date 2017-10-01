@@ -1,61 +1,68 @@
-[![General Assembly Logo](https://camo.githubusercontent.com/1a91b05b8f4d44b5bbfb83abac2b0996d8e26c92/687474703a2f2f692e696d6775722e636f6d2f6b6538555354712e706e67)](https://generalassemb.ly/education/web-development-immersive)
+## Deployed URL
+https://cavallaroc9.github.io/christa-tic-tac-toe/
 
-# browser-template
+## Technologies Used
+* HTML
+* CSS
+* SASS
+* javascript
+* jQuery
+* AJAX
 
-A template for starting front-end projects. Webpack for `require` system, build
-pipeline, and development server. Boostrap and Handlebars.js included. No
-front-end frameworks included.
+## Plan
+1. Start with [suggested project schedule](https://git.generalassemb.ly/ga-wdi-boston/game-project/blob/master/schedule.md "Suggested Schedule")
+2. Review [project requirements](https://git.generalassemb.ly/ga-wdi-boston/game-project/blob/master/requirements.md "Requirements")
+3. Reviewed [Game Project API](https://github.com/ga-wdi-boston/game-project-api "Game API")
+4. Create and prioritize user stories based on suggested project schedule
+5. Create wireframes
+6. Once repo is set up, begin coding and keep in mind the following tips:
+  1. Keep WIP "work in progress" low. Try to finish one thing before moving on to another.
+  2. If stuck on something, break it down into smaller pieces so the problems are easier to solve
+  3. Use google if you hit a roadblock. Read documentation if you don't understand something.
+  3. Commit often
+  4. Create new branches for different features
+  5. Deploy once each peice of code is working as expected
+  6. Keep in mind what MVP is and focus on requirements first
+7. Update config file with approprate API developement and production URLs
+8. Start with HTML and CSS to create a page with a basic tic tac toe board
+9. Update index.js with event handlers for game board
+10. Create events.js file and setup event handler callbacks and game logic functions
+11. Create api-board.js file and setup ajax requests for game board
+12. Create ui-board.js file and handle displaying success/error messages on client
+13. Once gameboard event handlers and logic are working as expected, move onto authentication (sign-up, sign-in, change-password, sign-out, etc.)
+14. Update HTML and CSS to add appropriate authentication elements. Use form fields when requiring input from the user.
+15. Update index.js with event handlers related to authentication
+16. Create api-auth.js file and setup ajax requests for authentication
+17. Create ui-auth.js file and handle displaying success/error messages on client
+18. Use jQuery to hide and show elements appropriatly.
+19. Update styling
 
-## Installation
+## Post MVP
+* To Do:
+  - Make game board cells square and more responsive
+  - Refactor code:
+    - Create additional functions to reduce redundancies
+  - Add additional game statistics such as how many games were won
+  - Allow players to compete from separate devices
+  - Allow players to customize their markers
+  - Add tableside chat
+  - Use localStorae to persist data locally
 
-1.  [Download](../../archive/master.zip) this template.
-1.  Unzip and rename the template directory.
-1.  Empty [`README.md`](README.md) and fill with your own content.
-1.  Replace all instances of `ga-wdi-boston.browser-template` with the name of your project.
-1.  Move into the new project and `git init`
-1.  Add all of the files in your project with the command `git add -A`
-  -   *Note:* THIS IS THE ONLY TIME YOU SHOULD RUN THIS COMMAND
-1.  Commit all of your files with the command `git commit`
-  -   Your commit title should read `Initial commit`
-1.  Install dependencies with `npm install`.
+## User Stores
 
-## Structure
+## Wireframes
+https://imgur.com/a/eyC9L
 
-Developers should store JavaScript files in [`assets/scripts`](assets/scripts).
-The "manifest" or entry-point is
-[`assets/scripts/index.js`](assets/scripts/index.js). In general, only
-application initialization goes in this file. It's normal for developers to
-start putting all code in this file, but encourage them to break out different
-responsibilities and use the `require` syntax put references where they're
-needed.
-
-Developers should set `config.apiOrigins.production` (and
-`config.apiOrigins.development` if it differs from the default).  With
-`apiOrigins` set, developers may rely on `config.apiOrigin` as the base for API
-URLs.
-
-Developers should store styles in [`assets/styles`](assets/styles) and load them
-from [`assets/styles/index.scss`](assets/styles/index.scss).
-
-Developers should use [getFormFields](forms.md) to retrieve form data to send to
-an API.
-
-To deploy a browser-template based SPA, run `grunt deploy`.
-
-## Tasks
-
-Developers should run these often!
-
--   `grunt nag` or just `grunt`: runs code quality analysis tools on your code
-    and complains
--   `grunt make-standard`: reformats all your code in the JavaScript Standard Style
--   `grunt <server|serve|s>`: generates bundles, watches, and livereloads
--   `grunt test`: runs any automated tests, depends on `grunt build`
--   `grunt build`: place bundled styles and scripts where `index.html` can find
-    them
-
-## [License](LICENSE)
-
-1.  All content is licensed under a CC­BY­NC­SA 4.0 license.
-1.  All software code is licensed under GNU GPLv3. For commercial use or
-    alternative licensing, please contact legal@ga.co.
+## User Stories
+* As a user, I would like to be able to enter my account information so that I can sign into the Tic Tac Toe Game
+* As a user, I want to create an account so that I can use that account to sign in
+* As a user, I want to be able to change my password when signed in so that I can keep my account secure
+* As a user, I want to see the board update each time a player moves so that I know the game status
+* As a user, I want to be prevented from marking a cell that is already marked so that someone cannot cheat
+* As a user, I want to see which player won at the end of a game so that I know the game is over.
+* As a user, I want to know if there is a tie at the end of a game so that I know the game is over.
+* As a user, I want to be able to start a new game once a game is over so that I can play again.
+* As a user, I want to be prevented from clicking on cells once a game is over so that I can see the status of the board when it was over.
+* As a user, I want the board cleared when I start a new game so that I can make new moves.
+* As a user, I would like to see game statistics so that I know how many total games I've played.
+* As a user, I want to be able to sign out so that someone else cannot play on my account
