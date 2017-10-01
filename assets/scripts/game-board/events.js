@@ -24,7 +24,7 @@ const displayDraw = function (event) {
   $('#win-or-draw').show()
   $('#win-or-draw').text('DRAW!')
   $('#reset-button').show()
-  console.log('DRAW')
+  // console.log('DRAW')
 }
 
 const updateDraw = function (event) {
@@ -52,7 +52,7 @@ const displayWinner = function () {
   $('#win-or-draw').show()
   $('#win-or-draw').text(turn + ' WINS!')
   $('#reset-button').show()
-  console.log('winner winner')
+  // console.log('winner winner')
 }
 
 const updateWinner = function (event) {
@@ -71,8 +71,7 @@ const updateWinner = function (event) {
     .then(ui.updateBoardSuccess)
     .catch(ui.updateBoardFailure)
 }
-//
-// // if array contains winning combo or draw, end game and alert winner
+
 const findWinner = function (event) {
   if (cellsArray[0] !== '' && cellsArray[0] === cellsArray[1] && cellsArray[1] === cellsArray[2]) {
     updateWinner(event)
@@ -97,19 +96,19 @@ const findWinner = function (event) {
 
 const hasNoMarker = function (event) {
   if ($(event.target).html().trim()) {
-    console.log('Already Marked')
+    // console.log('Already Marked')
     return false
   } else {
-    console.log('Empty')
+    // console.log('Empty')
     return true
   }
 }
 const switchTurn = function () {
   if (turn === 'Player X') {
     turn = 'Player O'
-    console.log('Player O turn')
+    // console.log('Player O turn')
   } else {
-    console.log('Player X turn')
+    // console.log('Player X turn')
     turn = 'Player X'
   }
 }
@@ -117,10 +116,10 @@ const switchTurn = function () {
 const markBoard = function (event) {
   $(event.target).text(marker)
   cellsArray[event.target.id] = marker
-  console.log('cellsArray is', cellsArray)
+  // console.log('cellsArray is', cellsArray)
   findWinner(event)
   switchTurn()
-  console.log('player is', turn)
+  // console.log('player is', turn)
 }
 
 const onUpdateGame = function (event) {
@@ -130,7 +129,7 @@ const onUpdateGame = function (event) {
     } else if (turn === 'Player O') {
       marker = 'o'
     }
-    console.log('index is', event.target.id)
+    // console.log('index is', event.target.id)
     const game = {
       'game': {
         'cell': {
@@ -154,7 +153,7 @@ const resetBoard = function () {
   $('#reset-button').hide()
   $('#win-or-draw').hide()
   cellsArray = ['', '', '', '', '', '', '', '', '']
-  console.log(over, cellsArray)
+  // console.log(over, cellsArray)
 }
 
 module.exports = {

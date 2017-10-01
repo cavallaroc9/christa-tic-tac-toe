@@ -32,19 +32,11 @@ fieldset {
   text-align: center;
 }
 
-h3 {
-  clear: both;
-  color: $white;
-  display: block;
-  font-size: 250%;
-  padding-top: 5%;
-  text-align: center;
-}
 
 .alert-message {
   color: $white;
   font-size: 18px;
-  font-weight: 600;
+  font-weight: 400;
   margin: 5px;
   text-align: right;
 }
@@ -110,7 +102,11 @@ h3 {
 }
 
 .btn {
-  font-weight: 600;
+  font-weight: 500;
+}
+
+.btn-info {
+  display: block;
 }
 
 .btn-primary {
@@ -132,18 +128,27 @@ h3 {
 .create {
   display: block;
   font-size: 150%;
-  margin: 10% auto;
-  padding: 2% 30%;
+  margin: 3% auto;
+  padding: 1% 20%;
   text-transform: uppercase;
 }
 
 .game {
   display: block;
-  margin: 5%;
+  margin-top: 5%;
 }
 
 .game-stat-b {
   float: right;
+}
+
+.header {
+  clear: both;
+  color: $white;
+  display: block;
+  font-size: 250%;
+  padding-top: 10px;
+  text-align: center;
 }
 
 .mb-1 {
@@ -175,12 +180,10 @@ h3 {
 }
 
 .reset {
-  color: $white;
   display: block;
   font-size: 150%;
-  font-weight: 600;
   margin: 0 auto;
-  padding: 2% 30%;
+  padding: 1% 20%;
   text-transform: uppercase;
 }
 
@@ -189,5 +192,5 @@ h3 {
   color: $white;
   font-size: 150%;
   font-weight: 600;
-  padding: 20px;
+  padding: 3%;
 }
