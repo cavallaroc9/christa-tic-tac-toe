@@ -22,7 +22,7 @@ const onCreateGame = function (event) {
 
 const displayDraw = function (event) {
   $('#win-or-draw').show()
-  $('#win-or-draw').text('DRAW!!')
+  $('#win-or-draw').text('DRAW!')
   $('#reset-button').show()
   console.log('DRAW')
 }
@@ -50,7 +50,7 @@ const isDraw = function (cellsArray) {
 
 const displayWinner = function () {
   $('#win-or-draw').show()
-  $('#win-or-draw').text(turn + ' WINS!!')
+  $('#win-or-draw').text(turn + ' WINS!')
   $('#reset-button').show()
   console.log('winner winner')
 }
