@@ -6,6 +6,8 @@ const boardEvents = require('../game-board/events')
 const signUpSuccess = function (data) {
   // console.log(data)
   $('#sign-up-div').hide()
+  $('#sign-up input:text').val(null)
+  $('#sign-up input:password').val(null)
   $('#sign-in-div').show()
   $('#message').text('You have successfully created an account!')
 }
@@ -19,6 +21,8 @@ const signInSuccess = function (data) {
   // console.log(data)
   store.user = data.user
   $('#sign-in-div').hide()
+  $('#sign-in input:text').val(null)
+  $('#sign-in input:password').val(null)
   $('#game-stat-button').show()
   $('#change-password-button').show()
   $('#sign-out-button').show()
@@ -34,6 +38,7 @@ const signInFailure = function () {
 const changePasswordSuccess = function () {
   // console.log('Changed Password successfully!')
   $('#change-password-div').hide()
+  $('#change-password input:password').val(null)
   $('#change-password-button').show()
   $('#game-stat-button').show()
   $('#message').text('You have successfully changed your password for account ' + store.user.email)
@@ -55,6 +60,7 @@ const signOutSuccess = function () {
   $('#game-stat-button').hide()
   $('#game-board').hide()
   $('#sign-in-div').show()
+  $('#change-password input:password').val(null)
   $('#message').text('You have signed out successfully!')
   // console.log(store.user)
 }

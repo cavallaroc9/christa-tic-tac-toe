@@ -19,6 +19,8 @@ $(() => {
   // Sign In
   $('#sign-in-link').on('click', function () {
     $('#sign-up-div').hide()
+    $('#sign-up input:text').val(null)
+    $('#sign-up input:password').val(null)
     $('#sign-in-div').show()
     $('#message').text('')
   })
@@ -27,6 +29,8 @@ $(() => {
   $('#sign-up-div').hide()
   $('#sign-up-link').on('click', function () {
     $('#sign-in-div').hide()
+    $('#sign-in input:text').val(null)
+    $('#sign-in input:password').val(null)
     $('#sign-up-div').show()
     $('#message').text('')
   //  $('#sign-up').show()
@@ -42,6 +46,7 @@ $(() => {
   })
   $('#cancel-password').on('click', function () {
     $('#change-password-div').hide()
+    $('#change-password input:password').val(null)
     $('#change-password-button').show()
     $('#game-stat-button').show()
     $('#message').text('')
