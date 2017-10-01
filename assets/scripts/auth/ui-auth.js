@@ -7,7 +7,7 @@ const signUpSuccess = function (data) {
   console.log(data)
   $('#sign-up-div').hide()
   $('#sign-in-div').show()
-  $('#message').text('You have successfully created an account!!')
+  $('#message').text('You have successfully created an account!')
 }
 
 const signUpFailure = function (error) {
