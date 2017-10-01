@@ -5,8 +5,9 @@ const store = require('../store')
 const createBoardSuccess = function (data) {
   store.game = data.game
   console.log('create board data is', data)
+  $('#message').text('New game started')
   $('#create-button').hide()
-  $('#game-board').show()
+  $('#game-board').show('slow')
   console.log('store game is', store.game)
   console.log('store user is', store.user)
 }
@@ -18,6 +19,7 @@ const createBoardFailure = function (error) {
 
 const updateBoardSuccess = function (data) {
   store.game = data.game
+  $('#message').text('')
   console.log('update board data is', data)
   console.log('store game data is', store.game)
 }

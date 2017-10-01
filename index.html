@@ -42,18 +42,18 @@
       </div>
       </div>
       <!-- End of Modal -->
-
-      <h3>Tic Tac Toe</h3>
-
+      <div class="header">
+        <h3>Tic Tac Toe</h3>
+      </div>
     <div id="sign-up-div" class="col-xs-10 col-md-6 sign-in-module">
       <form id="sign-up">
         <fieldset>
           <legend class="sign-in-header">Sign Up</legend>
           <input class="form-control form-control-lg" type="text" name="credentials[email]" placeholder="Enter Email">
           <br>
-          <input class="form-control form-control-lg" type="text" name="credentials[password]" placeholder="Enter Password">
+          <input class="form-control form-control-lg" type="password" name="credentials[password]" placeholder="Enter Password">
           <br>
-          <input class="form-control form-control-lg" type="text" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
+          <input class="form-control form-control-lg" type="password" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
           <br>
           <input type="submit" name="submit" value="Create Account" class="btn btn-primary btn-lg mb-1">
           <br>
@@ -67,7 +67,7 @@
           <legend class="sign-in-header .col-form-legend">Sign In</legend>
           <input class="form-control form-control-lg" type="text" name="credentials[email]" placeholder="Enter Email">
           <br>
-          <input class="form-control form-control-lg" type="text" name="credentials[password]" placeholder="Enter Password">
+          <input class="form-control form-control-lg" type="password" name="credentials[password]" placeholder="Enter Password">
           <br>
           <input type="submit" name="submit" value="Sign In" class="btn btn-primary btn-lg mb-1">
           <br>
@@ -79,9 +79,9 @@
       <form id="change-password">
         <fieldset>
           <legend class="sign-in-header">Change Password</legend>
-          <input class="form-control form-control-lg" type="text" name="passwords[old]" placeholder="Enter Old Password">
+          <input class="form-control form-control-lg" type="password" name="passwords[old]" placeholder="Enter Old Password">
           <br>
-          <input class="form-control form-control-lg" type="text" name="passwords[new]" placeholder="Enter New Password">
+          <input class="form-control form-control-lg" type="password" name="passwords[new]" placeholder="Enter New Password">
           <br>
           <input type="submit" name="submit" value="Change Password" class="btn btn-primary btn-lg mb-1">
           <button id="cancel-password" type="button" class="btn btn-secondary btn-lg mb-1">Cancel</button>
