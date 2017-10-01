@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
     <head>
-      <title>Example</title>
+      <title>Tic Tac Toe Game</title>
       <meta name="viewport" content="width=device-width, initial-scale=1">
 
       <!-- Do not add `link` tags-->
@@ -15,9 +15,8 @@
 
       <div id="message" class="alert-message"></div>
 
-
       <div class="menu-buttons">
-        <button type="button" id="sign-out-button" class="btn btn-info ml-1 sign-out-b">Sign Out</button>
+        <button type="button" id="sign-out-button" class="btn btn-info ml-1 mr-1 sign-out-b">Sign Out</button>
         <button type="button" id="change-password-button" class="btn btn-info ml-1 change-pwd-b">Change Password</button>
         <!-- Button trigger modal -->
         <button type="button" id="game-stat-button" class="btn btn-info game-stat-b" data-toggle="modal" data-target="#game-stat-modal">Game Stats</button>
@@ -44,7 +43,7 @@
       </div>
       <!-- End of Modal -->
 
-      <h3>Tic Tac Toe!</h3>
+      <h3>Tic Tac Toe</h3>
 
     <div id="sign-up-div" class="col-xs-10 col-md-6 sign-in-module">
       <form id="sign-up">
@@ -56,7 +55,7 @@
           <br>
           <input class="form-control form-control-lg" type="text" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
           <br>
-          <input type="submit" name="submit" value="Create Account" class="btn btn-primary btn-lg">
+          <input type="submit" name="submit" value="Create Account" class="btn btn-primary btn-lg mb-1">
           <br>
           <a href="#SignIn" id="sign-in-link">Already have an account?</a>
         </fieldset>
@@ -70,7 +69,7 @@
           <br>
           <input class="form-control form-control-lg" type="text" name="credentials[password]" placeholder="Enter Password">
           <br>
-          <input type="submit" name="submit" value="Sign In" class="btn btn-primary btn-lg">
+          <input type="submit" name="submit" value="Sign In" class="btn btn-primary btn-lg mb-1">
           <br>
           <a href="#SignUp" id="sign-up-link">Create an account</a>
         </fieldset>
@@ -84,8 +83,8 @@
           <br>
           <input class="form-control form-control-lg" type="text" name="passwords[new]" placeholder="Enter New Password">
           <br>
-          <input type="submit" name="submit" value="Change Password" class="btn btn-primary btn-lg">
-          <button id="cancel-password" type="button" class="btn btn-secondary btn-lg">Cancel</button>
+          <input type="submit" name="submit" value="Change Password" class="btn btn-primary btn-lg mb-1">
+          <button id="cancel-password" type="button" class="btn btn-secondary btn-lg mb-1">Cancel</button>
         </fieldset>
       </form>
   </div>
@@ -131,7 +130,7 @@
       </div>
       <div class="result center" id="win-or-draw"></div>
       <div>
-        <button id="reset-button" type="button" class="btn btn-warning reset btn-lg">Play Again</button>
+        <button id="reset-button" type="button" class="btn btn-warning reset btn-lg">Restart Game</button>
       </div>
     </body>
 </html>
