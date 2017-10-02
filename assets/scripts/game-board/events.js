@@ -24,7 +24,6 @@ const onCreateGame = function (event) {
 const displayDraw = function (event) {
   $('#win-or-draw').show()
   $('#win-or-draw').text('DRAW!')
-  //  $('#reset-button').show()
   $('#create-button').show()
   // console.log('DRAW')
 }
@@ -53,9 +52,8 @@ const isDraw = function (cellsArray) {
 const displayWinner = function () {
   $('#win-or-draw').show()
   $('#win-or-draw').text(turn + ' WINS!')
-  // $('#reset-button').show()
   $('#create-button').show()
-  // console.log('winner winner')
+  // console.log('winner')
 }
 
 const updateWinner = function (event) {
@@ -153,7 +151,6 @@ const resetBoard = function () {
   over = false
   turn = 'Player X'
   $('.box').text(null)
-  // $('#create-button').hide()
   $('#win-or-draw').hide()
   cellsArray = ['', '', '', '', '', '', '', '', '']
   // console.log(over, cellsArray)
