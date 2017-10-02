@@ -1,7 +1,7 @@
 'use strict'
 
 const store = require('../store')
-const boardEvents = require('../game-board/events')
+// const boardEvents = require('../game-board/events')
 
 const signUpSuccess = function (data) {
   // console.log(data)
@@ -52,13 +52,14 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   // console.log('Signed Out successfully!')
   store.user = null
-  boardEvents.resetBoard()
+  // boardEvents.resetBoard()
   $('#change-password-button').hide()
   $('#change-password-div').hide()
   $('#sign-out-button').hide()
   $('#create-button').hide()
   $('#game-stat-button').hide()
   $('#game-board').hide()
+  $('#win-or-draw').hide()
   $('#sign-in-div').show()
   $('#change-password input:password').val(null)
   $('#message').text('You have signed out successfully!')
