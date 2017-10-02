@@ -17,13 +17,15 @@ const displayGameStat = function () {
 const onCreateGame = function (event) {
   api.create()
     .then(ui.createBoardSuccess)
+    .then(resetBoard())
     .catch(ui.createBoardFailure)
 }
 
 const displayDraw = function (event) {
   $('#win-or-draw').show()
   $('#win-or-draw').text('DRAW!')
-  $('#reset-button').show()
+  //  $('#reset-button').show()
+  $('#create-button').show()
   // console.log('DRAW')
 }
 
@@ -39,8 +41,8 @@ const updateDraw = function (event) {
     }
   }
   api.update(game)
-    .then(displayDraw())
     .then(ui.updateBoardSuccess)
+    .then(displayDraw())
     .catch(ui.updateBoardFailure)
 }
 
@@ -51,7 +53,8 @@ const isDraw = function (cellsArray) {
 const displayWinner = function () {
   $('#win-or-draw').show()
   $('#win-or-draw').text(turn + ' WINS!')
-  $('#reset-button').show()
+  // $('#reset-button').show()
+  $('#create-button').show()
   // console.log('winner winner')
 }
 
@@ -67,8 +70,8 @@ const updateWinner = function (event) {
     }
   }
   api.update(game)
-    .then(displayWinner())
     .then(ui.updateBoardSuccess)
+    .then(displayWinner())
     .catch(ui.updateBoardFailure)
 }
 
@@ -140,8 +143,8 @@ const onUpdateGame = function (event) {
       }
     }
     api.update(game)
-      .then(markBoard(event))
       .then(ui.updateBoardSuccess)
+      .then(markBoard(event))
       .catch(ui.updateBoardFailure)
   }
 }
@@ -150,7 +153,7 @@ const resetBoard = function () {
   over = false
   turn = 'Player X'
   $('.box').text(null)
-  $('#reset-button').hide()
+  // $('#create-button').hide()
   $('#win-or-draw').hide()
   cellsArray = ['', '', '', '', '', '', '', '', '']
   // console.log(over, cellsArray)
