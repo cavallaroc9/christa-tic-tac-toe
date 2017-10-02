@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+    <head>
+      <title>Tic Tac Toe Game</title>
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+
+      <!-- Do not add `link` tags-->
+      <link rel="shortcut icon" type="image/x-icon" href="favicon.ico">
+
+      <!-- Do not add `script` tags-->
+      <script src="public/vendor.js" type="text/javascript" charset="utf-8" defer></script>
+      <script src="public/application.js" type="text/javascript" charset="utf-8" defer></script>
+    </head>
+    <body>
+
+      <div id="message" class="alert-message"></div>
+
+      <div class="menu-buttons">
+        <button type="button" id="sign-out-button" class="btn btn-info ml-1 mr-1 sign-out-b">Sign Out</button>
+        <button type="button" id="change-password-button" class="btn btn-info ml-1 change-pwd-b">Change Password</button>
+        <!-- Button trigger modal -->
+        <button type="button" id="game-stat-button" class="btn btn-info game-stat-b" data-toggle="modal" data-target="#game-stat-modal">Game Stats</button>
+        <!-- End Button trigger modal -->
+      </div>
+        <!-- Modal -->
+      <div class="modal fade" id="game-stat-modal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div class="modal-dialog" role="document">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title" id="exampleModalLabel">Your Games</h5>
+            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+          </div>
+          <div class="modal-body">
+            <div id="game-stat"></div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+      </div>
+      <!-- End of Modal -->
+      <div class="header">
+        <h2>Tic Tac Toe</h2>
+      </div>
+    <div id="sign-up-div" class="col-xs-10 col-md-6 sign-in-module">
+      <form id="sign-up">
+        <fieldset>
+          <legend class="sign-in-header">Sign Up</legend>
+          <input class="form-control form-control-lg" type="text" name="credentials[email]" placeholder="Enter Email">
+          <br>
+          <input class="form-control form-control-lg" type="password" name="credentials[password]" placeholder="Enter Password">
+          <br>
+          <input class="form-control form-control-lg" type="password" name="credentials[password_confirmation]" placeholder="Enter Password Confirmation">
+          <br>
+          <input type="submit" name="submit" value="Create Account" class="btn btn-primary btn-lg mb-1">
+          <br>
+          <div id="sign-in-link" class="link">Already have an account?</div>
+        </fieldset>
+      </form>
+    </div>
+    <div id="sign-in-div" class="col-xs-10 col-md-6 sign-in-module">
+      <form id="sign-in">
+        <fieldset>
+          <legend class="sign-in-header .col-form-legend">Sign In</legend>
+          <input class="form-control form-control-lg" type="text" name="credentials[email]" placeholder="Enter Email">
+          <br>
+          <input class="form-control form-control-lg" type="password" name="credentials[password]" placeholder="Enter Password">
+          <br>
+          <input type="submit" name="submit" value="Sign In" class="btn btn-primary btn-lg mb-1">
+          <br>
+          <div id="sign-up-link" class="link">Create an account</div>
+        </fieldset>
+      </form>
+    </div>
+  <div id="change-password-div" class="col-xs-10 col-md-6 sign-in-module">
+      <form id="change-password">
+        <fieldset>
+          <legend class="sign-in-header">Change Password</legend>
+          <input class="form-control form-control-lg" type="password" name="passwords[old]" placeholder="Enter Old Password">
+          <br>
+          <input class="form-control form-control-lg" type="password" name="passwords[new]" placeholder="Enter New Password">
+          <br>
+          <input type="submit" name="submit" value="Change Password" class="btn btn-primary btn-lg mb-1">
+          <button id="cancel-password" type="button" class="btn btn-secondary btn-lg mb-1">Cancel</button>
+        </fieldset>
+      </form>
+  </div>
+  <div class="result center" id="win-or-draw"></div>
+  <div>
+      <button id="create-button" type="button" class="btn btn-warning btn-lg create">Start New Game</button>
+  </div>
+      <div id="game-board-div" class="board col-xs-12 col-sm-12 col-md-12">
+        <div id="game-board" class="game">
+        <div class="row1">
+          <div class="col-xs-4 col-md-4 box-0">
+            <div id="0" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-1">
+            <div id="1" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-2">
+            <div id="2" class="box"></div>
+          </div>
+        </div>
+        <div class="row2">
+          <div class="col-xs-4 col-md-4 box-3">
+            <div id="3" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-4">
+            <div id="4" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-5">
+            <div id="5" class="box"></div>
+          </div>
+        </div>
+        <div class="row3">
+          <div class="col-xs-4 col-md-4 box-6">
+            <div id="6" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-7">
+            <div id="7" class="box"></div>
+          </div>
+          <div class="col-xs-4 col-md-4 box-8">
+            <div id="8" class="box"></div>
+          </div>
+        </div>
+      </div>
+      </div>
+
+
+    </body>
+</html>
