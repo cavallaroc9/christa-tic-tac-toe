@@ -17,7 +17,7 @@ const displayGameStat = function () {
 const onCreateGame = function (event) {
   api.create()
     .then(ui.createBoardSuccess)
-    .then(resetBoard())
+    .then(resetBoard)
     .catch(ui.createBoardFailure)
 }
 
@@ -42,7 +42,7 @@ const updateDraw = function (event) {
   }
   api.update(game)
     .then(ui.updateBoardSuccess)
-    .then(displayDraw())
+    .then(displayDraw)
     .catch(ui.updateBoardFailure)
 }
 
@@ -71,7 +71,7 @@ const updateWinner = function (event) {
   }
   api.update(game)
     .then(ui.updateBoardSuccess)
-    .then(displayWinner())
+    .then(displayWinner)
     .catch(ui.updateBoardFailure)
 }
 
