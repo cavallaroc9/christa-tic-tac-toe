@@ -13,14 +13,6 @@ $module-bg-color: #007399;
 $module-border: 2px solid #004d66;
 $white: #fff;
 
-a  {
-  color: $white;
-  text-decoration: underline;
-
-  &:hover {
-    color: $hover-color;
-  }
-}
 
 body {
   background-color: $background-color;
@@ -149,6 +141,16 @@ fieldset {
   font-size: 250%;
   padding-top: 10px;
   text-align: center;
+}
+
+.link {
+  color: $white;
+  cursor: pointer;
+  text-decoration: underline;
+
+  &:hover {
+    color: $hover-color;
+  }
 }
 
 .mb-1 {
