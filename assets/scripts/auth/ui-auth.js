@@ -52,7 +52,6 @@ const changePasswordFailure = function () {
 const signOutSuccess = function () {
   // console.log('Signed Out successfully!')
   store.user = null
-  // boardEvents.resetBoard()
   $('#change-password-button').hide()
   $('#change-password-div').hide()
   $('#sign-out-button').hide()

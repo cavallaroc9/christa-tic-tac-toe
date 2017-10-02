@@ -33,7 +33,6 @@ $(() => {
     $('#sign-in input:password').val(null)
     $('#sign-up-div').show()
     $('#message').text('')
-  //  $('#sign-up').show()
   })
   $('#sign-up').on('submit', authEvents.onSignUp)
   // Change Password
@@ -63,7 +62,4 @@ $(() => {
   $('#create-button').hide()
   $('#game-board').on('click', boardEvents.onUpdateGame)
   $('#create-button').on('click', boardEvents.onCreateGame)
-  // $('#reset-button').on('click', boardEvents.resetBoard)
-  // $('#reset-button').on('click', boardEvents.onCreateGame)
-  // $('#reset-button').hide()
 })
